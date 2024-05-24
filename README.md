@@ -24,3 +24,6 @@ Data format to be added:
     "featured": true
 }
 ```
+
+
+for running on the aws we need to change the url in "/frontend/src/url.js" with public ip:3001 
