@@ -72,4 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-for running on aws update the "/frontend/src/url.js" with public ip:3001
+for running on aws update the "/frontend/src/url.js" with "public ip:3001"
