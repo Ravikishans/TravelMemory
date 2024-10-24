@@ -681,6 +681,15 @@ sudo apt --fix-broken install
   MONGODB_URI=mongodb://mongodb_exporter:password@localhost:27017
   ```
 
+### 4. configure prometheus.yml with mongodb by adding following into it and then re-run the prometheus container
+
+  ```yml
+  - job_name: 'mongodb_exporter'
+    static_configs:
+    - targets: ['localhost:9216']
+  ```  
+  
+
 ## Conclusion
 After following the above steps and resolving the encountered issues, the setup for monitoring MongoDB with Grafana and Prometheus should be functional. If further issues arise, consult the logs or reach out for community support.
 
