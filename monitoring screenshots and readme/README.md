@@ -681,7 +681,7 @@ sudo apt --fix-broken install
   MONGODB_URI=mongodb://mongodb_exporter:password@localhost:27017
   ```
 
-### 4. configure prometheus.yml with mongodb by adding following into it and then re-run the prometheus container
+### 5. configure prometheus.yml with mongodb by adding following into it and then re-run the prometheus container
 
   ```yml
   - job_name: 'mongodb_exporter'
