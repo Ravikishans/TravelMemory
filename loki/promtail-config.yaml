@@ -23,4 +23,4 @@ scrape_configs:
     - localhost
     labels:
       job: TM_backend
-      __path__: /mnt/c/Users/Ravik/Desktop/DevOps/TravelMemory/travelmemory.log
+      __path__: /mnt/c/Users/Ravik/Desktop/DevOps/TravelMemory/backend/combined.log
