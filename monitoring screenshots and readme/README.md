@@ -681,9 +681,36 @@ sudo apt --fix-broken install
   MONGODB_URI=mongodb://mongodb_exporter:password@localhost:27017
   ```
 
-### 5. configure prometheus.yml with mongodb by adding following into it and then re-run the prometheus container
+### 5. Creating a Service for the MongoDB exporter
+  ```bash
+  cd /lib/systemd/system/
+  sudo nano mongodb_exporter.service
+  ```
+  - Paste the following configuration into your service file:
+  ```yaml
+  [Unit]
+  Description=MongoDB Exporter
+  User=prometheus
 
-  ```yml
+  [Service]
+  Type=simple
+  Restart=always
+  ExecStart=/usr/local/bin/mongodb_exporter
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+
+  - restart your system daemon to reload the unit-files:
+  ```bash
+  sudo systemctl daemon-reload
+  sudo systemctl start mongodb_exporter.service
+  sudo systemctl status mongodb_exporter.service
+  ```
+
+### 6. configure prometheus.yml with mongodb by adding following into it and then re-run the prometheus container
+
+  ```yaml
   - job_name: 'mongodb_exporter'
     static_configs:
     - targets: ['localhost:9216']
