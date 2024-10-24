@@ -691,5 +691,6 @@ sudo apt --fix-broken install
   
 
 ## Conclusion
-After following the above steps and resolving the encountered issues, the setup for monitoring MongoDB with Grafana and Prometheus should be functional. If further issues arise, consult the logs or reach out for community support.
+After following the above steps and resolving the encountered issues, the setup for monitoring MongoDB with Grafana and Prometheus should be functional. If further issues arise, consult the logs or reach out for community support. For more support refer to ``` https://www.digitalocean.com/community/tutorials/how-to-monitor-mongodb-with-grafana-and-prometheus-on-ubuntu-20-04#step-2-configuring-the-mongodb-exporter ```
+
 
