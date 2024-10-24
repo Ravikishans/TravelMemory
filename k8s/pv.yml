@@ -1,0 +1,22 @@
+#### pv.yml will just create the storage #### 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv
+  namespace: database
+spec:
+  capacity:
+    storage: 3Gi
+  # volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  # persistentVolumeReclaimPolicy: Retain/Recycle/Delete
+  # storageClassName: slow
+  # mountOptions:
+  # - hard
+  # - nfsvers=4.1
+  # nfs:
+  # path: /tmp
+  # server: 172.17.0.2
+  hostPath:
+    path: /mnt/data

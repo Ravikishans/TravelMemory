@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tmfedeploy
+  namespace: frontend
+spec:
+  selector:
+    matchLabels:
+      app: tmfedeploy
+  template:
+    metadata:
+      labels:
+        app: tmfedeploy
+    spec:
+      containers:
+      - name: tmfedeploy
+        image: sukhilnair/jenkins-class:frontend-11
+        env:
+        - name: REACT_APP_BACKEND_URL
+          valueFrom:
+            configMapKeyRef:
+              name: tmfe-config
+              key: REACT_APP_BACKEND_URL
+        ports:
+        - containerPort: 3000

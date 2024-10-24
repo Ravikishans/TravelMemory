@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tmbedeploy
+  namespace: backend
+spec:
+  selector:
+    matchLabels:
+      app: tmbedeploy
+  template:
+    metadata:
+      labels:
+        app: tmbedeploy
+    spec:
+      containers:
+      - name: tmbedeploy
+        image: sukhilnair/jenkins-class:backend-11
+        env:
+        - name: MONGO_URI
+          valueFrom:
+            secretKeyRef:
+              name: backend-secret
+              key: MONGO_URI
+        - name: PORT
+          value: "3001"
+        ports:
+        - containerPort: 3001

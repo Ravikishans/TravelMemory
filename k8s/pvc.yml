@@ -1,0 +1,13 @@
+#### Claiming the pv space ####
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-pvc
+  namespace: database
+spec:
+  resources:
+    requests:
+      storage: 3Gi
+  # volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce

@@ -1,0 +1,26 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /var/log/positions.yaml
+
+clients:
+- url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+# - job_name: system
+#   static_configs:
+#   - targets:
+#     - localhost
+#     labels:
+#       job: varlogs
+#       __path__: /var/log/*log
+
+- job_name: 'TM_backend'
+  static_configs:
+  - targets:
+    - localhost
+    labels:
+      job: TM_backend
+      __path__: /mnt/c/Users/Ravik/Desktop/DevOps/TravelMemory/travelmemory.log
